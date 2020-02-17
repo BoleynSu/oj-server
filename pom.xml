@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>su.boleyn.oj</groupId>
 	<artifactId>oj-server</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<name>Boleyn Su's Online Judge (server)</name>
 	<description>Yet another online judge system</description>
@@ -55,9 +55,9 @@
 			<version>9.0.31</version>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.19</version>
+			<groupId>su.boleyn.oj</groupId>
+			<artifactId>oj-core</artifactId>
+			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 	<build>

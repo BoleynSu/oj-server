@@ -9,7 +9,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import su.boleyn.oj.core.Config;
+import su.boleyn.oj.core.FileUtils;
+import su.boleyn.oj.core.SQL;
+
 public class User extends Config {
+	static final String ADMIN_ACCOUNT = "boleynsu";
 
 	private HttpServletRequest request;
 	private HttpServletResponse response;
@@ -35,7 +40,7 @@ public class User extends Config {
 
 	public String getAnnouncement() {
 		try {
-			return FileUtil.read("/config/Announcement");
+			return FileUtils.read("/config/Announcement");
 		} catch (IOException e) {
 			return null;
 		}
@@ -268,7 +273,7 @@ public class User extends Config {
 			if (!isAdmin() && !rs.getBoolean("published"))
 				return null;
 			String code = rs.getString("code");
-			return FileUtil.read("/" + code + "/" + getProblemTitle());
+			return FileUtils.read("/" + code + "/" + getProblemTitle());
 		} catch (SQLException | IOException | NumberFormatException e) {
 			return null;
 		}
