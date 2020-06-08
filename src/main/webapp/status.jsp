@@ -6,10 +6,9 @@
 	ResultSet rs = null;
 	try {
 		rs = user.searchSubmission();
-		if (!rs.next()) {
+		if (!rs.isBeforeFirst()) {
 			user.go("No such page.", "/status?cid=" + user.get("cid"));
 		}
-		rs.previous();
 	} catch (Exception e) {
 		user.go("No such page.", "/status?cid=" + user.get("cid"));
 	}

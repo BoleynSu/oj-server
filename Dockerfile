@@ -6,7 +6,7 @@ ENV APPROOT=/boleyn.su/opt/boleyn.su/oj-server/
 RUN mkdir -p $APPROOT
 WORKDIR $APPROOT
 
-ENV VERSION=1.0.2
+ENV VERSION=1.0.3
 RUN wget https://repo1.maven.org/maven2/su/boleyn/oj/oj-server/$VERSION/oj-server-$VERSION-jar-with-dependencies.jar{,.asc}
 RUN gpg --verify oj-server-$VERSION-jar-with-dependencies.jar.asc
 RUN wget https://repo1.maven.org/maven2/su/boleyn/oj/oj-server/$VERSION/oj-server-$VERSION.jar{,.asc}

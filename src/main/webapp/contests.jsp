@@ -7,10 +7,9 @@
 	ResultSet rs = null;
 	try {
 		rs = user.searchContest();
-		if (!rs.next()) {
+		if (!rs.isBeforeFirst()) {
 			user.go("No such page.", "/contests");
 		}
-		rs.previous();
 	} catch (Exception e) {
 		user.go("No such page.", "/contests");
 	}

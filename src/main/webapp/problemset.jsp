@@ -5,10 +5,9 @@
 	ResultSet rs = null;
 	try {
 		rs = user.searchProblem();
-		if (!rs.next()) {
+		if (!rs.isBeforeFirst()) {
 			user.go("No such page.", "/problemset?cid=" + user.get("cid"));
 		}
-		rs.previous();
 	} catch (Exception e) {
 		user.go("No such page.", "/problemset?cid=" + user.get("cid"));
 	}
